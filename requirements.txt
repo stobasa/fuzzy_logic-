@@ -3,3 +3,4 @@ gunicorn
 scikit-fuzzy
 django
 django-heroku
+matplotlib
