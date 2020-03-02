@@ -37,7 +37,6 @@ def risk_guage(climate_input, structure_input):
     rule2 = ctrl.Rule(structure['average'], risk_level['average'])
     rule3 = ctrl.Rule(structure['good'] | climate['good'], risk_level['low'])
 
-
     #Creating a control system
     risk_factor_ctrl = ctrl.ControlSystem([rule1, rule2, rule3])
     # simulating the control system
@@ -52,9 +51,6 @@ def risk_guage(climate_input, structure_input):
     risk_factor_guage.compute()
 
 
-    risk_G = risk_factor_guage.output['risk_level']
+    print(risk_factor_guage.output['risk_level'])
     #risk_level.view(sim=risk_factor_guage)
-    return risk_G
-
-
-risk_guage(5,6)
+    return risk_factor_guage.output['risk_level']

@@ -6,24 +6,32 @@ app = Flask(__name__)
 
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def home():
+    if request.method == "POST":
+        structure_input = request.form["sturcture_input"]
+        climate_input = request.form["climate_input"]
+
+        print(structure_input, climate_input)
+        risk_G = risk_guage(int(structure_input), int(climate_input))
+        #return '<h1>{}</h1>'.format(risk_G)
+        return render_template('test.html').format(structure_input, climate_input ,risk_G)
+
+
     return render_template('input.html')
 
-@app.route('/input', methods=['POST'])
+@app.route('/home', methods=['POST', 'GET'])
 def input():
     if request.method == "POST":
         structure_input = request.form["sturcture_input"]
         climate_input = request.form["climate_input"]
-        risk_G = risk_guage(structure_input, climate_input)
-        #return redirect(url_for("results", result=risk_G))
-        return risk_G
-    else:
-        return render_template('input.html')
+        risk_G = risk_guage(int(structure_input), int(climate_input))
+        return redirect(url_for("result", risk=risk_G))
     
 
-    return render_template('index.html')
-
+@app.route("/result")
+def result(risk):
+    return f"<h1>{risk}</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
