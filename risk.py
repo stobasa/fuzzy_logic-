@@ -54,3 +54,4 @@ def risk_guage(climate_input, structure_input):
     print(risk_factor_guage.output['risk_level'])
     #risk_level.view(sim=risk_factor_guage)
     return risk_factor_guage.output['risk_level']
+
