@@ -99,7 +99,7 @@ def risk_guage(DD_input, DC_input, USM_input, ABP_input, NBP_input, APS_input, E
     #risk_level.view(sim=risk_factor_guage)
     return risk_factor_guage.output['risk_level']
 
-#risk_guage(0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-#risk_guage(1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-#risk_guage(0,0,0,0,0,0,0,0,0,0,0,0,1,1)
-#risk_guage(0,0,0,1,0,0,1,0,1,0,1,0,1,1)
+risk_guage(0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+risk_guage(1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+risk_guage(0,0,0,0,0,0,0,0,0,0,0,0,1,1)
+risk_guage(0,0,0,1,0,0,1,0,1,0,1,0,1,1)

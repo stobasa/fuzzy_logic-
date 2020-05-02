@@ -31,7 +31,7 @@ def home():
             #return '<h1>{}</h1>'.format(risk_G)
             return render_template('test.html').format(risk_G)
         except Exception:
-            return render_template('input.html').format("Input Values Between 1 to 10")
+            return render_template('input.html').format("Input Values Between 0 to 1")
         
 
 
